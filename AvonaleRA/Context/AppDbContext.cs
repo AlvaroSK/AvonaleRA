@@ -9,6 +9,10 @@ namespace AvonaleRA.Context
     {
         public DbSet<Produto> Produtos { get; set; }
 
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             IConfiguration configuration = new ConfigurationBuilder()
