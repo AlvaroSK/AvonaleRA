@@ -43,7 +43,6 @@ namespace AvonaleRA.Controllers
         }
 
         // PUT: api/Produtos/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduto(int id, Produto produto)
         {
@@ -78,6 +77,7 @@ namespace AvonaleRA.Controllers
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
+
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
 
