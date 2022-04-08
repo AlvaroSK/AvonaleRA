@@ -2,7 +2,8 @@
 {
     public class ValidaC
     {
-        public Produto produto { get; set; }
+        public double valor { get; set; }
         public Cartao cartao { get; set; }
+        public string aprovado { get; set; }
     }
 }

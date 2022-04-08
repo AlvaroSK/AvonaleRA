@@ -47,7 +47,6 @@ namespace AvonaleRA.Controllers
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
-
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
 
