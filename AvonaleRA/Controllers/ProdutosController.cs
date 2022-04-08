@@ -42,38 +42,8 @@ namespace AvonaleRA.Controllers
             return produto;
         }
 
-        // PUT: api/Produtos/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduto(int id, Produto produto)
-        {
-            if (id != produto.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(produto).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProdutoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/Produtos
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {
